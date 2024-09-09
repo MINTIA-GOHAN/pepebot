@@ -26,4 +26,4 @@ COPY . /bot
 EXPOSE 8080
 
 # 実行
-CMD poetry run python app/main.py
+CMD ["python", "/bot/main.py"]
