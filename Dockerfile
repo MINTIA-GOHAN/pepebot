@@ -11,7 +11,7 @@ ENV TZ Asia/Tokyo
 ENV TERM xterm
 
 # Poetryのインストール
-RUN pip install poetry==1.5.5
+RUN pip install poetry
 
 # pyproject.tomlとpoetry.lockをコピー
 COPY pyproject.toml poetry.lock* /bot/
