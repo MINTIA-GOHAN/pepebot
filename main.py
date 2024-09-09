@@ -32,7 +32,7 @@ async def on_message(message):
     data = response.json()
 
     # レスポンス全体を表示せず、一部のデータだけ表示
-    await message.channel.send(f"検索結果が取得されました。")
+    await message.channel.send(f"検索結果が見つかったよ🐱")
 
     # JSONデータの一部をデバッグ用に送信（省略されるかもしれませんが）
     await message.channel.send(f"Total Results: {data.get('searchInformation', {}).get('totalResults', '不明')}")
@@ -41,6 +41,10 @@ async def on_message(message):
         first_result = data['items'][0]['link']  # 最初の検索結果のリンクを取得
         await message.channel.send(first_result)
     else:
-        await message.channel.send('検索結果が見つかりませんでした。')
+        await message.channel.send('え？無いよ「0」だよ🐶')
 
-client.run(os.getenv('DISCORD_TOKEN'))
+def main_function():
+    client.run(os.getenv('DISCORD_TOKEN'))
+
+if __name__ == "__main__":
+    main_function()
