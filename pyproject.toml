@@ -11,14 +11,15 @@ discord-py = "^2.4.0"
 requests = "^2.32.3"
 
 [tool.pyright]
-# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
 useLibraryCodeForTypes = true
 exclude = [".cache"]
 
 [tool.ruff]
-# https://beta.ruff.rs/docs/configuration/
 select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
 ignore = ['W291', 'W292', 'W293']
+
+[tool.poetry.scripts]
+app = "app.main:main_function"  # ここで app/main.py の main_function を実行する
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
